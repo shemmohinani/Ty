@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Flappy Valentine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- START MENU -->
+    <section id="startScreen" class="screen screen--start">
+      <div class="card">
+        <h1>💘 Flappy Valentine 💘</h1>
+        <p class="sub">Collect <b>5 hearts</b>. You have <b>3 chances</b>.</p>
+        <div class="hint">
+          <div>Desktop: <b>Space</b> or <b>Click</b></div>
+          <div>Phone: <b>Tap</b></div>
+        </div>
+        <button id="startBtn" class="btn">Start</button>
+      </div>
+    </section>
+
+    <!-- GAME -->
+    <section id="gameScreen" class="screen screen--game hidden">
+      <div class="topbar">
+        <div class="pill">Hearts: <span id="heartsUI">0</span>/5</div>
+        <div class="pill">Chances: <span id="livesUI">3</span></div>
+      </div>
+
+      <div class="gameWrap">
+        <canvas id="game" width="480" height="640" aria-label="Game canvas"></canvas>
+      </div>
+
+      <div class="controlsHint">Tap / Click / Space to flap</div>
+    </section>
+
+    <!-- END / GIFT -->
+    <section id="endScreen" class="screen screen--end hidden">
+      <div class="card">
+        <h2 id="endTitle">A surprise for you 🎁</h2>
+
+        <button id="giftBtn" class="gift" aria-label="Open gift">
+          <div class="giftBox">
+            <div class="giftLid"></div>
+            <div class="giftRibbon"></div>
+            <div class="giftBody"></div>
+          </div>
+          <div class="giftText">Tap to open</div>
+        </button>
+
+        <div id="questionWrap" class="question hidden">
+          <div class="questionText" id="questionText">will you be my valentine</div>
+
+          <div class="choices">
+            <button id="yesBtn" class="btn btn--yes">YES!!!</button>
+            <button id="ohYeahBtn" class="btn btn--yes">Oh YEAH!!!</button>
+          </div>
+
+          <div id="gifWrap" class="gifWrap hidden" aria-label="Valentine gif">
+            <div class="gifEmbed">
+              <iframe
+                src="https://giphy.com/embed/DtBHcARLqNAvVnYsyD"
+                frameborder="0"
+                allowfullscreen
+                title="Cute bear couple gif"
+              ></iframe>
+            </div>
+          </div>
+
+          <div id="response" class="response hidden"></div>
+        </div>
+
+        <div class="footerActions">
+          <button id="playAgainBtn" class="btn btn--secondary">Play again</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
